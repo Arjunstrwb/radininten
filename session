@@ -1,17 +1,27 @@
 <?php
    include('config.php');
    session_start();
-   
-   $user_check = $_SESSION['login_user'];
-   
-   $ses_sql = mysqli_query($db,"SELECT username FROM akun WHERE username = '$user_check' ");
-   
-   $row = mysqli_fetch_array($ses_sql,MYSQLI_ASSOC);
-   
-   $login_session = $row['username'];
-   
-   if(!isset($_SESSION['login_user'])){
-      header("location:login.php");
-      die();
-   }
+if(@$_SESSION['level']){
+     if (@$_SESSION['level'] == "admin")
+    {  echo'<script type="text/javascript">
+    window.location.href="admin/home.php";
+    </script>';
+    }
+    else if (@$_SESSION['level'] == "dokter")
+    { echo'<script type="text/javascript">
+    window.location.href="staff/home.php";
+    </script>';
+    }
+    elseif(@$_SESSION['level'] == "operator")
+    {
+        echo'<script type="text/javascript">
+        window.location.href="maintenance/home.php";
+        </script>';
+    }
+}
+else{
+	echo'<script type="text/javascript">
+    window.location.href="login.php";
+    </script>';
+}
 ?>

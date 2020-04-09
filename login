@@ -39,7 +39,9 @@
 				<?php
 				/*handle error */
    include("config.php");
-   session_start();
+			$username= @$_POST['username'];
+			$password= @$_POST['password'];
+   $login= @$_POST['login'];
    
    if($_SERVER["REQUEST_METHOD"] == "POST") {
       // username and password sent from form 
