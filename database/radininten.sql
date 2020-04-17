@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.2
+-- version 4.6.6deb5
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Apr 03, 2020 at 12:16 PM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.3.13
+-- Host: localhost:3306
+-- Generation Time: 18 Apr 2020 pada 06.47
+-- Versi Server: 10.1.44-MariaDB-0ubuntu0.18.04.1
+-- PHP Version: 7.2.24-0ubuntu0.18.04.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -25,26 +23,27 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `akun`
+-- Struktur dari tabel `akun`
 --
 
 CREATE TABLE `akun` (
   `id` int(11) NOT NULL,
   `username` varchar(100) NOT NULL,
-  `password` varchar(100) NOT NULL
+  `password` varchar(100) NOT NULL,
+  `role` enum('admin','pegawai','','') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `akun`
+-- Dumping data untuk tabel `akun`
 --
 
-INSERT INTO `akun` (`id`, `username`, `password`) VALUES
-(1, 'Arjuna ', 'admin');
+INSERT INTO `akun` (`id`, `username`, `password`, `role`) VALUES
+(1, 'arjuna', 'admin', 'admin');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dokumen`
+-- Struktur dari tabel `dokumen`
 --
 
 CREATE TABLE `dokumen` (
@@ -56,7 +55,7 @@ CREATE TABLE `dokumen` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pegawai`
+-- Struktur dari tabel `pegawai`
 --
 
 CREATE TABLE `pegawai` (
@@ -69,7 +68,7 @@ CREATE TABLE `pegawai` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `riwayat_pengiriman`
+-- Struktur dari tabel `riwayat_pengiriman`
 --
 
 CREATE TABLE `riwayat_pengiriman` (
@@ -100,7 +99,6 @@ ALTER TABLE `dokumen`
 --
 ALTER TABLE `pegawai`
   ADD PRIMARY KEY (`nip`);
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
