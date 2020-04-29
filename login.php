@@ -31,31 +31,38 @@
 </head>
 <body>
 
-	<div class="kotak_login">
-		<p class="tulisan_login">Silahkan Login</p>
-
+<div class="limitter">
+		<div class="container-login100" style="background-image: url('./assets/images/bg-01.jpg');">
+		<div class="wrap-login100 p-t-30 p-b-50">
+		<span class="login100-form-title p-b-41">
 		<form action="cek_login.php" method="post">
-			<label>Username</label>
-			<input type="text" name="username" class="form_login" placeholder="Username .." required="required"></input>
-
-			<label>Password</label>
+		<center>
+		<br>
+		<br>
+			<label>SISTEM INFORMASI LAPORAN BULANAN UNIT AVSEC </label>
+			<label>(SILABNA)</label>
+			</br>
+			</br>
+		</center>
+			<br>
+			<input type="text" name="nip" class="form_login" placeholder="Username .." required="required"></input>
 			<input type="password" name="password" class="form_login" placeholder="Password .." required="required"></input>
-
 			<input type="submit" class="tombol_login" value="LOGIN"></input>
-
-			<br>
-			<br>
 			<center>
-				<a class="link" href="">Kembali</a>
+			
+				<a class="linl" href="">UPBU Radin Inten II Lampung</a>
+				<br>
+				<a class="link" href="">Copy Right 2020 (Margareta Oktaviani)- All Right Reserverd</a>
+				</br>
 			</center>
 		</form>
-	</div>
+	</div> 
+	
 
-
-<!-- 
-	<div class="limiter">
-		<div class="container-login100" style="background-image: url('./assets/images/bg-01.jpg');">
-			<div class="wrap-login100 p-t-30 p-b-50">
+                          
+            
+	
+			<!-- <div class="wrap-login100 p-t-30 p-b-50">
 				<span class="login100-form-title p-b-41">
 					Please Login First
 				</span>
@@ -98,5 +105,7 @@
 	<script src="./assets/vendor/countdowntime/countdowntime.js"></script>
 <!--===============================================================================================-->
 	<script src="./assets/js/main.js"></script>
+	
+
 </body>
 </html>

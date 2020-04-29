@@ -6,12 +6,12 @@ session_start();
 include './include/connect.php';
  
 // menangkap data yang dikirim dari form login
-$username = $_POST['username'];
+$nip = $_POST['nip'];
 $password = $_POST['password'];
  
  
 // menyeleksi data user dengan username dan password yang sesuai
-$login = mysqli_query($connect,"select * from akun where username='$username' and password='$password'");
+$login = mysqli_query($connect,"select * from pegawai where nip='$nip' and password='$password'");
 // menghitung jumlah data yang ditemukan
 $cek = mysqli_num_rows($login);
  
@@ -21,21 +21,29 @@ if($cek > 0){
 	$data = mysqli_fetch_assoc($login);
  
 	// cek jika user login sebagai admin
-	if($data['role']=="admin"){
+	if($data['role']=="kepala bandara"){
  
 		// buat session login dan username
-		$_SESSION['username'] = $username;
-		$_SESSION['role'] = "admin";
+		$_SESSION['nip'] = $nip;
+		$_SESSION['role'] = "kepala bandara";
 		// alihkan ke halaman dashboard admin
-		header("location:admin/home.php");
+		header("location:kepala bandara/home.php");
+	
+	}else if($data['role']=="kepala staff"){
+		// buat session login dan username
+		$_SESSION['nip'] = $nip;
+		$_SESSION['role'] = "kepala staff";
+		// alihkan ke halaman dashboard pegawai
+		header("location:kepala staff/home.php");
+		
  
 	// cek jika user login sebagai pegawai
-	}else if($data['role']=="pegawai"){
+	}else if($data['role']=="pegawai kampen"){
 		// buat session login dan username
-		$_SESSION['username'] = $username;
-		$_SESSION['role'] = "pegawai";
+		$_SESSION['nip'] = $nip;
+		$_SESSION['role'] = "pegawai kampen";
 		// alihkan ke halaman dashboard pegawai
-		header("location:pegawai/home.php");
+		header("location:pegawai kampen/home.php");
  
 	// cek jika user login sebagai pengurus
 	}else{
