@@ -38,10 +38,8 @@
 		<form action="cek_login.php" method="post">
 		<center>
 		<br>
-		<br>
-			<label>SISTEM INFORMASI LAPORAN BULANAN UNIT AVSEC </label>
-			<label>(SILABNA)</label>
-			</br>
+			<h5>SISTEM INFORMASI</h5>
+			<h5>LAPORAN BULANAN UNIT KEAMANAN PENERBANGAN DAN PELAYANAN DARURAT </h5>
 			</br>
 		</center>
 			<br>
@@ -49,10 +47,9 @@
 			<input type="password" name="password" class="form_login" placeholder="Password .." required="required"></input>
 			<input type="submit" class="tombol_login" value="LOGIN"></input>
 			<center>
-			
-				<a class="linl" href="">UPBU Radin Inten II Lampung</a>
+				<a class="link" href="https://www.angkasapura2.co.id/id/business_relation/our_airport/32-bandar-udara-internasional-radin-inten-ii">KC Lampung Angkasa Pura 2 Radin Inten II</a>
 				<br>
-				<a class="link" href="">Copy Right 2020 (Margareta Oktaviani)- All Right Reserverd</a>
+				<a type="text">Copy Right 2020 (Margareta Oktaviani)- All Right Reserverd</a>
 				</br>
 			</center>
 		</form>

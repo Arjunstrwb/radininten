@@ -27,14 +27,14 @@ if($cek > 0){
 		$_SESSION['nip'] = $nip;
 		$_SESSION['role'] = "kepala bandara";
 		// alihkan ke halaman dashboard admin
-		header("location:kepala bandara/home.php");
+		header("location:kepalabandara/home.php");
 	
-	}else if($data['role']=="kepala staff"){
+	}else if($data['role']=="kepala koordinator"){
 		// buat session login dan username
 		$_SESSION['nip'] = $nip;
-		$_SESSION['role'] = "kepala staff";
+		$_SESSION['role'] = "kepala koordinator";
 		// alihkan ke halaman dashboard pegawai
-		header("location:kepala staff/home.php");
+		header("location:kepalastaff/home.php");
 		
  
 	// cek jika user login sebagai pegawai
@@ -43,7 +43,7 @@ if($cek > 0){
 		$_SESSION['nip'] = $nip;
 		$_SESSION['role'] = "pegawai kampen";
 		// alihkan ke halaman dashboard pegawai
-		header("location:pegawai kampen/home.php");
+		header("location:pegawaikampen/home.php");
  
 	// cek jika user login sebagai pengurus
 	}else{
